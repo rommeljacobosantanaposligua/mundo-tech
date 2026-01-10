@@ -1,29 +1,33 @@
 <!DOCTYPE HTML>
 <!--
-	Verti by HTML5 UP (único archivo, con navegación por hash y botones "Volver al inicio")
+	Verti by HTML5 UP (un solo archivo, navegación por hash corregida)
 -->
 <html lang="es">
 <head>
-	<title>Mundo Tech</title>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<title>Mundo Tech</title>
+
 	<link rel="stylesheet" href="assets/css/main.css" />
+
 	<style>
-		/* Cada "subpage" está oculta por defecto; la activa se muestra */
+		/* Manejo de visibilidad de subpáginas */
 		.subpage { display: none; }
 		.subpage.active { display: block; }
 
-		/* Botón para volver al inicio dentro de cada sección */
+		/* Botón volver al inicio dentro de secciones */
 		.back-home {
 			display:inline-block;
-			margin: 0.5rem 0;
-			padding: 0.5rem 0.8rem;
+			margin: 0.5rem 0 1rem 0;
+			padding: 0.45rem 0.8rem;
 			background:#222; color:#fff;
-			text-decoration:none;border-radius:4px;font-size:0.9rem;
+			text-decoration:none; border-radius:4px; font-size:0.95rem;
 		}
 
-		/* Ajuste: si necesitas que la cabecera no ocupe espacio al hacer scroll */
+		/* Ajuste para scroll cuando se usa :target (si aplica) */
 		:target { scroll-margin-top: 90px; }
+
+		/* Si necesitas sobre-escribir estilos puntuales del theme para que no se vean elementos duplicados */
 	</style>
 </head>
 <body class="is-preload homepage">
@@ -40,7 +44,7 @@
 				</div>
 
 				<!-- Nav -->
-				<nav id="nav">
+				<nav id="nav" aria-label="Navegación principal">
 					<ul>
 						<li class="current"><a href="#home">Bienvenidos</a></li>
 						<li><a href="#left-sidebar">Computadoras de Oficina</a></li>
@@ -113,14 +117,16 @@
 			</div>
 		</div>
 
-		<!-- Main: subpáginas internas -->
+		<!-- Main: aquí se muestran las subpáginas internas -->
 		<div id="main-wrapper">
 			<div class="container">
 
-				<!-- Home (contenedor principal) -->
-				<div id="home" class="subpage active" data-body-class="homepage">
+				<!-- HOME -->
+				<div id="home" class="subpage active" data-body-class="homepage" role="main" aria-labelledby="home-title">
+					<h2 id="home-title" class="hidden">Inicio - Mundo Tech</h2>
 					<div class="row gtr-200">
 						<div class="col-4 col-12-medium">
+							<!-- Sidebar mini -->
 							<div id="sidebar">
 								<section class="widget thumbnails">
 									<h3>Acerca de nosotros</h3>
@@ -148,10 +154,11 @@
 					</div>
 				</div>
 
-				<!-- Left Sidebar (antes left-sidebar.html) -->
+				<!-- LEFT SIDEBAR (Computadoras de oficina) -->
 				<div id="left-sidebar" class="subpage" data-body-class="left-sidebar" role="region" aria-labelledby="left-title">
 					<a class="back-home" href="#home">← Volver al inicio</a>
 					<h2 id="left-title">COMPUTADORAS DE OFICINA</h2>
+
 					<div class="row gtr-200">
 						<div class="col-4 col-12-medium">
 							<section>
@@ -178,6 +185,7 @@
 						<div class="col-8 col-12-medium imp-medium">
 							<article>
 								<p>Las computadoras de oficina son equipos diseñados para realizar tareas administrativas y laborales cotidianas...</p>
+
 								<h3>Componentes recomendados</h3>
 								<p><strong>CPU:</strong> Intel Core i3/i5 o AMD Ryzen 3/5. <strong>RAM:</strong> 16GB. <strong>Almacenamiento:</strong> SSD NVMe 500GB.</p>
 							</article>
@@ -185,10 +193,11 @@
 					</div>
 				</div>
 
-				<!-- No Sidebar (antes no-sidebar.html) -->
+				<!-- NO SIDEBAR (Gamers / Arquitectos) -->
 				<div id="no-sidebar" class="subpage" data-body-class="no-sidebar" role="region" aria-labelledby="no-title">
 					<a class="back-home" href="#home">← Volver al inicio</a>
 					<h2 id="no-title">Computadoras para Gamers y Arquitectos</h2>
+
 					<div class="container">
 						<div id="content">
 							<article>
@@ -230,10 +239,11 @@
 					</div>
 				</div>
 
-				<!-- Right Sidebar (antes right-sidebar.html) -->
+				<!-- RIGHT SIDEBAR (Ensamblar tu PC) -->
 				<div id="right-sidebar" class="subpage" data-body-class="no-sidebar" role="region" aria-labelledby="right-title">
 					<a class="back-home" href="#home">← Volver al inicio</a>
 					<h2 id="right-title">Guía para armar tu propia PC</h2>
+
 					<div class="container">
 						<article id="content">
 							<section>
@@ -264,7 +274,7 @@
 
 		<!-- Footer -->
 		<div id="footer-wrapper">
-			<footer id="footer" class="container">
+			<footer id="footer" class="container" role="contentinfo">
 				<div class="row">
 					<section class="widget contact last">
 						<h3>Contact Us</h3>
@@ -293,7 +303,7 @@
 
 	</div>
 
-	<!-- Scripts -->
+	<!-- Scripts (mantener en rutas relativas) -->
 	<script src="assets/js/jquery.min.js"></script>
 	<script src="assets/js/jquery.dropotron.min.js"></script>
 	<script src="assets/js/browser.min.js"></script>
@@ -301,8 +311,8 @@
 	<script src="assets/js/util.js"></script>
 	<script src="assets/js/main.js"></script>
 
+	<!-- Script corregido de navegación por hash (evita tener que pulsar dos veces y maneja back/forward) -->
 	<script>
-		// Gestión de subpáginas vía hash: muestra sólo la sección indicada y oculta la home.
 		(function () {
 			const subpages = Array.from(document.querySelectorAll('.subpage'));
 			const navItems = Array.from(document.querySelectorAll('#nav ul li'));
@@ -310,16 +320,17 @@
 			const defaultId = 'home';
 
 			function setActive(id) {
-				let target = document.getElementById(id);
+				const target = document.getElementById(id);
 				// ocultar todas
 				subpages.forEach(sp => sp.classList.remove('active'));
-				// si existe la sección, mostrarla; si no, mostrar home
+				// mostrar la solicitada o home si no existe
 				if (target) {
 					target.classList.add('active');
 				} else {
-					document.getElementById(defaultId).classList.add('active');
+					const home = document.getElementById(defaultId);
+					if (home) home.classList.add('active');
 				}
-				// actualizar clase current en el nav
+				// actualizar "current" en el nav
 				navItems.forEach(li => li.classList.remove('current'));
 				navLinks.forEach(a => {
 					const href = (a.getAttribute('href') || '').replace('#','') || defaultId;
@@ -327,42 +338,51 @@
 						if (a.parentElement) a.parentElement.classList.add('current');
 					}
 				});
-				// ajustar clase del body para que los estilos de layout funcionen
+				// ajustar clase del body para los estilos de layout (homepage, left-sidebar, no-sidebar)
 				const active = document.querySelector('.subpage.active');
 				const bodyClass = active ? (active.dataset.bodyClass || 'homepage') : 'homepage';
-				// conserva otras clases (como is-preload) y reemplaza el layout-class (última clase)
 				const classes = document.body.className.split(' ').filter(Boolean);
-				// Elimina clases de layout comunes usados por esta plantilla (homepage, left-sidebar, no-sidebar)
 				const filtered = classes.filter(c => !['homepage','left-sidebar','no-sidebar'].includes(c));
 				filtered.push(bodyClass);
 				document.body.className = filtered.join(' ');
-			}
-
-			function onHashChange() {
-				const id = location.hash.replace('#','');
-				if (!id) {
-					setActive(defaultId);
-				} else {
-					setActive(id);
-				}
-				// opcional: scroll al top de la sección
+				// subir al top cuando se cambia de sección
 				window.scrollTo({ top: 0, behavior: 'smooth' });
 			}
 
-			// Inicializar al cargar la página
-			window.addEventListener('load', onHashChange);
-			window.addEventListener('hashchange', onHashChange);
+			function navigateTo(id) {
+				if (!id) id = defaultId;
+				// mostrar inmediatamente
+				setActive(id);
+				// actualizar hash en la barra sin forzar recarga
+				if ((location.hash.replace('#','') || defaultId) !== id) {
+					history.pushState(null, '', '#' + id);
+				}
+			}
 
-			// Enlaces que llevan a secciones por hash: prevenir que el navegador intente recargar la página
+			// Manejar clics en enlaces hash: evitar comportamiento por defecto y navegar inmediatamente
 			document.querySelectorAll('a[href^="#"]').forEach(a => {
 				a.addEventListener('click', function (e) {
-					// Dejar que el hash cambie: el listener hashchange hará el resto
-					// Pero evitamos enlaces que puedan tener href="#" solos (no los procesamos)
 					const href = a.getAttribute('href');
-					if (href === '#') {
+					if (!href || href === '#') {
 						e.preventDefault();
+						return;
 					}
+					e.preventDefault();
+					const id = href.replace('#', '');
+					navigateTo(id);
 				});
+			});
+
+			// Soporte para back/forward del navegador
+			window.addEventListener('popstate', function () {
+				const id = location.hash.replace('#', '') || defaultId;
+				setActive(id);
+			});
+
+			// Inicializar al cargar la página
+			window.addEventListener('load', function () {
+				const initial = location.hash.replace('#', '') || defaultId;
+				setActive(initial);
 			});
 		})();
 	</script>
