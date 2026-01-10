@@ -1,25 +1,383 @@
-<!DOCTYPE html>
-<html lang="es">
+<!DOCTYPE HTML>
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mundo-Tech</title>
+	<title>Mundo Tech</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="assets/css/main.css" />
+	<style>
+		.section-content {
+			display: none;
+		}
+		.section-content.active {
+			display: block;
+		}
+		.nav-button {
+			cursor: pointer;
+			transition: all 0.3s ease;
+		}
+		.nav-button:hover {
+			transform: translateY(-2px);
+		}
+	</style>
 </head>
-<body>
-    <header>
-        <h1>Bienvenido a Mundo-Tech</h1>
-    </header>
-    <section>
-        <h2>Productos Destacados</h2>
-        <p>Encuentra los mejores productos tecnológicos.</p>
-    </section>
-    <section>
-        <h2>Equipos Computadores</h2>
-        <p>Venta de computadores de última generación.</p>
-    </section>
-    <!-- Sección 'Equipos Servidores' eliminada según solicitud -->
-    <footer>
-        <p>© 2026 Mundo-Tech. Todos los derechos reservados.</p>
-    </footer>
+<body class="is-preload homepage">
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<div id="header-wrapper">
+			<header id="header" class="container">
+				<div id="logo">
+					<h1><a href="#" onclick="showSection('home'); return false;">TECH</a></h1>
+					<span></span>
+				</div>
+				<nav id="nav">
+					<ul>
+						<li class="current"><a href="#" onclick="showSection('home'); return false;">Bienvenidos</a></li>
+					</ul>
+				</nav>
+			</header>
+		</div>
+
+		<!-- HOME SECTION -->
+		<div id="home-section" class="section-content active">
+			<!-- Banner -->
+			<div id="banner-wrapper">
+				<div id="banner" class="box container">
+					<div class="row">
+						<div class="col-7 col-12-medium">
+							<h2>Esto es MUNDO TECH.</h2>
+							<p>Asesores de confianza para tu armado/compra de pc</p>
+						</div>
+						<div class="col-5 col-12-medium">
+							<ul></ul>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Features -->
+			<div id="features-wrapper">
+				<div class="container">
+					<div class="row">
+						<div class="col-4 col-12-medium">
+							<section class="box feature nav-button" onclick="showSection('oficina')">
+								<a class="image featured"><img src="images/foto1.jpg" alt="" /></a>
+								<div class="inner">
+									<header>
+										<h2>COMPUTADORAS PARA OFICINA</h2>
+										<p><strong>Para trabajos de oficina o uso personal</strong></p>
+									</header>
+									<p>En esta sección hemos pensado en aquellas personas o empresas que necesitan una computadora para manejar diferentes aplicaciones como lo son Word, Excel, Power Point, etc.</p>
+								</div>
+							</section>
+						</div>
+						<div class="col-4 col-12-medium">
+							<section class="box feature">
+								<a class="image featured"><img src="images/INTEL.jpg" alt="" /></a>
+								<div class="inner">
+									<header>
+										<h2>EQUIPOS SERVIDORES</h2>
+										<p><strong>Para empresas y organizaciones</strong></p>
+									</header>
+									<p>Equipos diseñados para manejar múltiples usuarios y aplicaciones empresariales con alta disponibilidad y rendimiento.</p>
+								</div>
+							</section>
+						</div>
+						
+						<div class="col-4 col-12-medium">
+							<section class="box feature nav-button" onclick="showSection('ensambla')">
+								<a class="image featured"><img src="images/foto3.jpg" alt="" /></a>
+								<div class="inner">
+									<header>
+										<h2>ENSAMBLA TU PROPIA PC</h2>
+										<p><strong>Los componentes que quieres a los mejores precios</strong></p>
+									</header>
+									<p>En esta sección se pone en venta todo tipo de componentes de pc, ajustándose a tu presupuesto, también contamos con asesoría personalizada para aquellos que no tengan conocimientos previos acerca de este gran mundo de las computadoras.</p>
+								</div>
+							</section>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Main -->
+			<div id="main-wrapper">
+				<div class="container">
+					<div class="row gtr-200">
+						<div class="col-4 col-12-medium">
+							<div id="sidebar">
+								<section class="widget thumbnails">
+									<h3>Acerca de nosotros</h3>
+									<div class="grid">
+										<div class="row gtr-50">
+											<div class="col-6"><a href="#" class="image fit"><img src="images/foto4.jpg" alt="" /></a></div>
+											<div class="col-6"><a href="#" class="image fit"><img src="images/foto5.jpg" alt="" /></a></div>
+											<div class="col-6"><a href="#" class="image fit"><img src="images/foto6.jpg" alt="" /></a></div>
+											<div class="col-6"><a href="#" class="image fit"><img src="images/foto7.jpg" alt="" /></a></div>
+										</div>
+									</div>
+								</section>
+							</div>
+						</div>
+						<div class="col-8 col-12-medium imp-medium">
+							<div id="content">
+								<section class="last">
+									<h2>¿Quienes somos?</h2>
+									<p>Nosotros somos <strong>MUNDO TECH</strong>, una pequeña empresa que comenzó como un simple sueño y pasión por las computadoras que con el tiempo fue evolucionando hasta convertirnos en lo que ahora somos, y gracias a toda la confianza de las personas que han puesto en nosotros.</p>
+									<p>Con 10 años de trayectoria, nos dedicamos a ayudar a todas las personas que no tienen conocimientos sobre computadoras, brindándoles un ambiente cómodo, de confianza y con la atención de un equipo que realmente entiende sus necesidades. También ofrecemos soporte a quienes ya poseen experiencia y saben exactamente lo que buscan adquirir o resolver.</p>
+								</section>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- OFICINA SECTION -->
+		<div id="oficina-section" class="section-content">
+			<div id="main-wrapper">
+				<div class="container">
+					<div class="row gtr-200">
+						<div class="col-4 col-12-medium">
+							<div id="sidebar">
+								<section>
+									<h3>Consejo sobre la computadora</h3>
+									<p>Si vas a pasar muchas horas programando o diseñando sitios web (como el footer que estás maquetando), la fatiga visual será tu mayor enemigo. Al elegir componentes para tu PC de oficina, asegúrate de que el monitor tenga tecnología Flicker-Free y filtro de luz azul. Esto es incluso más importante que tener luces LED decorativas, ya que protege tu vista durante largas jornadas de trabajo.</p>
+									<footer>
+										<a href="https://drive.google.com/file/d/15Jyk1w0v0IMxN6jM7IzYftVnO-8bBwhC/view?usp=drivesdk" class="button icon solid fa-info-circle">NO DAR CLICK!!!</a>
+									</footer>
+								</section>
+
+								<section>
+									<h3>Más Información sobre los componentes</h3>
+									<ul class="style2">
+										<li><a href="https://www.youtube.com/watch?v=G7MxRqDmXR8">Procesador</a></li>
+										<li><a href="https://www.youtube.com/watch?v=_abAWnq0Gs8">Memoria Ram</a></li>
+										<li><a href="https://www.youtube.com/watch?v=hjVu7Td6doI">Almacenamiento</a></li>
+										<li><a href="https://www.youtube.com/watch?v=l8avRfJa1PM">Placa Base (Motherboard)</a></li>
+										<li><a href="https://www.youtube.com/watch?v=xU0P791DCq8">Fuente de Poder</a></li>
+										<li><a href="https://www.youtube.com/watch?v=rmaV0ED4RpA">Gabinete</a></li>
+									</ul>
+								</section>
+								<section>
+									<a href="#" onclick="showSection('home'); return false;" class="button icon solid fa-arrow-left">Volver al inicio</a>
+								</section>
+							</div>
+						</div>
+						<div class="col-8 col-12-medium imp-medium">
+							<div id="content">
+								<article>
+									<h2>COMPUTADORAS DE OFICINA</h2>
+									<p>Las computadoras de oficina son equipos diseñados para realizar tareas administrativas y laborales cotidianas, como procesamiento de textos, manejo de hojas de cálculo, correo electrónico, navegación web y uso de software empresarial básico, priorizando la eficiencia, estabilidad y bajo consumo de recursos.</p>
+
+									<h3>Componentes que podrían ser útiles para armar su computadora de oficina</h3>
+									<p><b>1. El Procesador (CPU):</b> Es el cerebro multitarea para oficina, no necesitas una potencia extrema, pero sí fluidez. Busca procesadores con gráficos integrados para ahorrarte el gasto de una tarjeta de video dedicada. Recomendación: Intel Core i3 o i5 (Generación 12 en adelante) o AMD Ryzen 3 o 5 (Serie 5000 o 7000G).</p>
+									<p><b>Tip:</b> Asegúrate de que el modelo no tenga la letra "F" (en Intel), ya que esos requieren tarjeta de video obligatoriamente.</p>
+
+									<p><b>2. Memoria RAM:</b> La clave de la fluidez. Es el componente que permite tener muchas pestañas de Chrome, Excel y Zoom abiertos al mismo tiempo sin que la PC se trabe. Capacidad: 16 GB es el estándar ideal hoy en día. Con 8 GB funciona, pero se queda corto rápidamente. Configuración: Usa dos módulos (2 de 8GB) para activar el Dual Channel, lo que mejora el rendimiento de los gráficos integrados.</p>
+
+									<p><b>3. Almacenamiento:</b> Nunca uses un disco duro mecánico (HDD) como unidad principal. Un <b>SSD NVMe</b> hará que la computadora encienda en segundos y los programas abran al instante. <b>Capacidad:</b> 500 GB suele ser suficiente para documentos y software de oficina.</p>
+									<p><b>Tip:</b> Si manejas archivos muy pesados o videos, puedes añadir un HDD de 1TB o 2TB como unidad secundaria de respaldo.</p>
+									
+									<p><b>4. Placa Base (Motherboard):</b> La clave de la fluidez. No necesitas una placa cara de "Gamer". Una de serie económica es suficiente. <b>Modelos:</b> Busca chipsets serie H o B (H610 para Intel o B550 para AMD). <b>Conectividad:</b> Asegúrate de que tenga las salidas de video que usa tu monitor (HDMI, DisplayPort o VGA si es antiguo).</p>
+
+									<p><b>5. Fuente de Poder y Gabinete:</b> Mucha gente ahorra de más aquí, pero una buena fuente protege tu inversión contra apagones o picos de voltaje. <b>Fuente:</b> Una de 400W a 500W con certificación 80 Plus Bronze de una marca reconocida (EVGA, Corsair, Cooler Master) es más que suficiente. <b>Gabinete:</b> Busca uno sencillo, de tamaño "Micro-ATX" para que no ocupe mucho espacio en el escritorio y tenga buen flujo de aire.</p>
+								</article>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- GAMERS SECTION -->
+		<div id="gamers-section" class="section-content">
+			<div id="main-wrapper">
+				<div class="container">
+					<div id="content">
+						<article>
+							<header>
+								<h2>Computadoras para Gamers y Arquitectos</h2>
+								<p>Comparación clara para elegir la mejor opción según tus necesidades</p>
+							</header>
+
+							<section class="features">
+								<div class="row">
+									<div class="col-6 col-12-medium">
+										<section class="box feature">
+											<a class="image featured">
+												<img src="images/gamer1.jpg" alt="Computadora Gamer">
+											</a>
+											<h3>Computadora Gamer</h3>
+											<p>Diseñada para alto rendimiento gráfico y velocidad. Ideal para videojuegos modernos, streaming y tareas exigentes como edición de video o modelado 3D en tiempo real.</p>
+										</section>
+									</div>
+
+									<div class="col-6 col-12-medium">
+										<section class="box feature">
+											<a class="image featured">
+												<img src="images/arquitecto1.jpg" alt="Computadora para Arquitecto">
+											</a>
+											<h3>Computadora para Arquitecto</h3>
+											<p>Enfocada en productividad profesional y estabilidad. Optimizada para AutoCAD, Revit, SketchUp y renderizados prolongados con precisión.</p>
+										</section>
+									</div>
+								</div>
+							</section>
+
+							<section class="box">
+								<h2>Aspectos a tomar en cuenta</h2>
+								<ul class="style1">
+									<li><strong>Procesador (CPU):</strong><br>Gamer: alta frecuencia y varios núcleos.<br>Arquitecto: potencia para render y simulaciones.</li>
+									<li><strong>Tarjeta Gráfica (GPU):</strong><br>Gamer: NVIDIA RTX o AMD Radeon.<br>Arquitecto: RTX Studio, Quadro o Radeon Pro.</li>
+									<li><strong>Memoria RAM:</strong><br>Gamer: mínimo 16 GB.<br>Arquitecto: 16–32 GB recomendado.</li>
+									<li><strong>Almacenamiento:</strong><br>SSD obligatorio.<br>Capacidad sugerida: 512 GB o 1 TB.</li>
+									<li><strong>Sistema de enfriamiento:</strong><br>Fundamental para sesiones largas de trabajo o juego.</li>
+									<li><strong>Pantalla / Monitor:</strong><br>Resolución Full HD mínimo, ideal 2K o 4K.<br>Buena precisión de color para arquitectura.</li>
+									<li><strong>Puertos y conectividad:</strong><br>USB-A, USB-C, HDMI, lector SD.</li>
+									<li><strong>Presupuesto:</strong><br>Las computadoras gamer y profesionales requieren mayor inversión.</li>
+								</ul>
+							</section>
+
+							<section>
+								<a href="#" onclick="showSection('home'); return false;" class="button icon solid fa-arrow-left">Volver al inicio</a>
+							</section>
+						</article>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- ENSAMBLA SECTION -->
+		<div id="ensambla-section" class="section-content">
+			<div id="main-wrapper">
+				<div class="container">
+					<article id="content">
+						<section>
+							<h2>Guía para armar tu propia PC</h2>
+							<p>Armar tu propia computadora es una excelente forma de obtener el mejor rendimiento según tu presupuesto y necesidades. En esta guía aprenderás cómo elegir correctamente cada componente.</p>
+
+							<figure class="image featured">
+								<img src="images/pc-armada.jpg" alt="PC armada con componentes modernos">
+								<figcaption>Ejemplo de una PC armada correctamente</figcaption>
+							</figure>
+						</section>
+
+						<section>
+							<h3>¿Por qué es importante la compatibilidad?</h3>
+							<p>Todos los componentes de una PC deben ser <strong>compatibles</strong> entre sí. Si no lo son, la computadora no funcionará correctamente o presentará fallos. Además, deben tener buena <strong>sinergia</strong> para evitar problemas de rendimiento.</p>
+						</section>
+
+						<section>
+							<h3>¿Qué es el cuello de botella?</h3>
+							<p>Ocurre cuando un componente limita el rendimiento de otro. Por ejemplo, un procesador muy débil con una tarjeta gráfica muy potente hará que la GPU no se aproveche al máximo.</p>
+
+							<figure class="image featured">
+								<img src="images/cuellodebotella.jpg" alt="Ejemplo de cuello de botella entre CPU y GPU">
+								<figcaption>Ejemplo de cuello de botella entre procesador y gráfica</figcaption>
+							</figure>
+						</section>
+
+						<section>
+							<h3>Compatibilidad entre componentes</h3>
+							<ul>
+								<li><strong>CPU y placa madre:</strong> deben usar el mismo socket.</li>
+								<li><strong>Memoria RAM:</strong> tipo y frecuencia compatibles con la placa madre.</li>
+								<li><strong>Tarjeta gráfica:</strong> equilibrada con el procesador.</li>
+								<li><strong>Fuente de poder:</strong> potencia suficiente y certificación de calidad.</li>
+								<li><strong>Gabinete:</strong> compatible con el tamaño de los componentes.</li>
+							</ul>
+						</section>
+
+						<section>
+							<h3>Ejemplos prácticos</h3>
+							<p><strong>✓ Buena combinación:</strong> CPU gama media + GPU gama media + 16 GB de RAM.<br>
+							<strong>✘ Mala combinación:</strong> CPU básica + GPU de gama alta (cuello de botella).</p>
+						</section>
+
+						<section>
+							<h3>Consejos finales</h3>
+							<p>Antes de comprar, revisa siempre las especificaciones oficiales de cada componente y piensa tu PC como un conjunto equilibrado, no como piezas aisladas.</p>
+						</section>
+
+						<section>
+							<a href="#" onclick="showSection('home'); return false;" class="button icon solid fa-arrow-left">Volver al inicio</a>
+						</section>
+					</article>
+				</div>
+			</div>
+		</div>
+
+		<!-- Footer -->
+		<div id="footer-wrapper">
+			<footer id="footer" class="container">
+				<div class="row">
+					<div class="col-6 col-12-medium col-12-small">
+						<section class="widget links">
+							<h3>Soporte Técnico</h3>
+							<ul class="style2">
+								<li><a href="#">Centro de soporte</a></li>
+								<li><a href="#">Servicios técnicos</a></li>
+								<li><a href="#">Comentarios</a></li>
+								<li><a href="#">¿Detectaste algún problema?</a></li>
+							</ul>
+						</section>
+					</div>
+					<div class="col-6 col-12-medium col-12-small">
+						<section class="widget contact">
+							<h3>Contacto</h3>
+							<ul>
+								<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+								<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+								<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+							</ul>
+							<p><strong>Email:</strong> soportetech@gmail.com<br />
+							<strong>Ubicación:</strong> Manta, Ecuador<br />
+							<strong>Tel:</strong> +593 98 138 4937</p>
+						</section>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-12">
+						<div id="copyright">
+							<ul class="menu">
+								<li>&copy; 2025 Mundo Tech. Todos los derechos reservados.</li>
+								<li>Diseño: <a href="http://html5up.net">HTML5 UP</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</footer>
+		</div>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.dropotron.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+
+	<script>
+		function showSection(sectionName) {
+			// Ocultar todas las secciones
+			const sections = document.querySelectorAll('.section-content');
+			sections.forEach(section => {
+				section.classList.remove('active');
+			});
+
+			// Mostrar la sección seleccionada
+			const targetSection = document.getElementById(sectionName + '-section');
+			if (targetSection) {
+				targetSection.classList.add('active');
+			}
+
+			// Scroll al inicio
+			window.scrollTo(0, 0);
+		}
+	</script>
 </body>
 </html>
