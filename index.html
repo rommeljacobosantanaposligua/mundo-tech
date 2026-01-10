@@ -1,6 +1,6 @@
 <!DOCTYPE HTML>
 <!--
-	Verti by HTML5 UP (modificado para un único archivo)
+	Verti by HTML5 UP (único archivo, con navegación por hash y botones "Volver al inicio")
 -->
 <html lang="es">
 <head>
@@ -9,10 +9,20 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 	<link rel="stylesheet" href="assets/css/main.css" />
 	<style>
-		/* Oculta subpáginas por defecto; la activa se muestra */
+		/* Cada "subpage" está oculta por defecto; la activa se muestra */
 		.subpage { display: none; }
 		.subpage.active { display: block; }
-		/* Pequeño ajuste para enlaces internos que puedan necesitar scroll offset */
+
+		/* Botón para volver al inicio dentro de cada sección */
+		.back-home {
+			display:inline-block;
+			margin: 0.5rem 0;
+			padding: 0.5rem 0.8rem;
+			background:#222; color:#fff;
+			text-decoration:none;border-radius:4px;font-size:0.9rem;
+		}
+
+		/* Ajuste: si necesitas que la cabecera no ocupe espacio al hacer scroll */
 		:target { scroll-margin-top: 90px; }
 	</style>
 </head>
@@ -57,7 +67,7 @@
 			</div>
 		</div>
 
-		<!-- Features (con enlaces a secciones internas) -->
+		<!-- Features (enlaces a secciones internas por hash) -->
 		<div id="features-wrapper">
 			<div class="container">
 				<div class="row">
@@ -103,14 +113,14 @@
 			</div>
 		</div>
 
-		<!-- Main: aquí se muestran las subpáginas internas -->
+		<!-- Main: subpáginas internas -->
 		<div id="main-wrapper">
 			<div class="container">
-				<!-- Contenido principal: home (introducción breve) -->
+
+				<!-- Home (contenedor principal) -->
 				<div id="home" class="subpage active" data-body-class="homepage">
 					<div class="row gtr-200">
 						<div class="col-4 col-12-medium">
-							<!-- Sidebar mini -->
 							<div id="sidebar">
 								<section class="widget thumbnails">
 									<h3>Acerca de nosotros</h3>
@@ -138,81 +148,69 @@
 					</div>
 				</div>
 
-				<!-- Left Sidebar content (antes left-sidebar.html) -->
-				<div id="left-sidebar" class="subpage" data-body-class="left-sidebar">
+				<!-- Left Sidebar (antes left-sidebar.html) -->
+				<div id="left-sidebar" class="subpage" data-body-class="left-sidebar" role="region" aria-labelledby="left-title">
+					<a class="back-home" href="#home">← Volver al inicio</a>
+					<h2 id="left-title">COMPUTADORAS DE OFICINA</h2>
 					<div class="row gtr-200">
 						<div class="col-4 col-12-medium">
-							<div class="sidebar-inner">
-								<section>
-									<h3>Consejo sobre la computadora</h3>
-									<p>Si vas a pasar muchas horas programando o diseñando sitios web, la fatiga visual será tu mayor enemigo. Al elegir componentes para tu PC de oficina, asegúrate de que el monitor tenga tecnología Flicker-Free y filtro de luz azul.</p>
-									<footer>
-										<a href="https://drive.google.com/file/d/15Jyk1w0v0IMxN6jM7IzYftVnO-8bBwhC/view?usp=drivesdk" class="button icon solid fa-info-circle">NO DAR CLICK!!!</a>
-									</footer>
-								</section>
+							<section>
+								<h3>Consejo sobre la computadora</h3>
+								<p>Si vas a pasar muchas horas programando o diseñando sitios web, la fatiga visual será tu mayor enemigo. Al elegir componentes para tu PC de oficina, asegúrate de que el monitor tenga tecnología Flicker-Free y filtro de luz azul.</p>
+								<footer>
+									<a href="https://drive.google.com/file/d/15Jyk1w0v0IMxN6jM7IzYftVnO-8bBwhC/view?usp=drivesdk" class="button icon solid fa-info-circle">NO DAR CLICK!!!</a>
+								</footer>
+							</section>
 
-								<section>
-									<h3>Más Información sobre los componentes</h3>
-									<ul class="style2">
-										<li><a href="https://www.youtube.com/watch?v=G7MxRqDmXR8">Procesador</a></li>
-										<li><a href="https://www.youtube.com/watch?v=_abAWnq0Gs8">Memoria Ram</a></li>
-										<li><a href="https://www.youtube.com/watch?v=hjVu7Td6doI">Almacenamiento</a></li>
-										<li><a href="https://www.youtube.com/watch?v=l8avRfJa1PM">Placa Base (Motherboard)</a></li>
-										<li><a href="https://www.youtube.com/watch?v=xU0P791DCq8">Fuente de Poder</a></li>
-										<li><a href="https://www.youtube.com/watch?v=rmaV0ED4RpA">Gabinete</a></li>
-									</ul>
-								</section>
-							</div>
+							<section>
+								<h3>Más Información sobre los componentes</h3>
+								<ul class="style2">
+									<li><a href="https://www.youtube.com/watch?v=G7MxRqDmXR8">Procesador</a></li>
+									<li><a href="https://www.youtube.com/watch?v=_abAWnq0Gs8">Memoria Ram</a></li>
+									<li><a href="https://www.youtube.com/watch?v=hjVu7Td6doI">Almacenamiento</a></li>
+									<li><a href="https://www.youtube.com/watch?v=l8avRfJa1PM">Placa Base (Motherboard)</a></li>
+									<li><a href="https://www.youtube.com/watch?v=xU0P791DCq8">Fuente de Poder</a></li>
+									<li><a href="https://www.youtube.com/watch?v=rmaV0ED4RpA">Gabinete</a></li>
+								</ul>
+							</section>
 						</div>
 
 						<div class="col-8 col-12-medium imp-medium">
-							<div class="content-inner">
-								<article>
-									<h2>COMPUTADORAS DE OFICINA</h2>
-									<p>Las computadoras de oficina son equipos diseñados para realizar tareas administrativas y laborales cotidianas...</p>
-
-									<h3>Componentes que podrían ser útiles</h3>
-									<p><strong>1. El Procesador (CPU):</strong> Es el cerebro multitarea; recomendación: Intel Core i3/i5 o AMD Ryzen 3/5.</p>
-									<p><strong>2. Memoria RAM:</strong> 16 GB recomendado; usar módulos en dual channel.</p>
-									<p><strong>3. Almacenamiento:</strong> SSD NVMe para unidad principal, 500GB recomendado.</p>
-									<p><strong>4. Placa Base:</strong> chipsets H o B, revisar conectividad de video.</p>
-									<p><strong>5. Fuente y Gabinete:</strong> fuente 400–500W 80 Plus Bronze y gabinete Micro-ATX con buen flujo.</p>
-								</article>
-							</div>
+							<article>
+								<p>Las computadoras de oficina son equipos diseñados para realizar tareas administrativas y laborales cotidianas...</p>
+								<h3>Componentes recomendados</h3>
+								<p><strong>CPU:</strong> Intel Core i3/i5 o AMD Ryzen 3/5. <strong>RAM:</strong> 16GB. <strong>Almacenamiento:</strong> SSD NVMe 500GB.</p>
+							</article>
 						</div>
 					</div>
 				</div>
 
-				<!-- No Sidebar content (antes no-sidebar.html) -->
-				<div id="no-sidebar" class="subpage" data-body-class="no-sidebar">
+				<!-- No Sidebar (antes no-sidebar.html) -->
+				<div id="no-sidebar" class="subpage" data-body-class="no-sidebar" role="region" aria-labelledby="no-title">
+					<a class="back-home" href="#home">← Volver al inicio</a>
+					<h2 id="no-title">Computadoras para Gamers y Arquitectos</h2>
 					<div class="container">
 						<div id="content">
 							<article>
 								<header>
-									<h2>Computadoras para Gamers y Arquitectos</h2>
 									<p>Comparación clara para elegir la mejor opción según tus necesidades</p>
 								</header>
 
-								<!-- TARJETAS -->
 								<section class="features">
 									<div class="row">
 										<div class="col-6 col-12-medium">
 											<section class="box feature">
-												<a class="image featured">
-													<img src="images/gamer1.jpg" alt="Computadora Gamer">
-												</a>
+												<a class="image featured"><img src="images/gamer1.jpg" alt="Computadora Gamer"></a>
 												<h3>Computadora Gamer</h3>
-												<p>Diseñada para alto rendimiento gráfico y velocidad. Ideal para videojuegos modernos, streaming y edición de video.</p>
+												<p>Diseñada para alto rendimiento gráfico y velocidad. Ideal para videojuegos modernos y streaming.</p>
 											</section>
 										</div>
 
 										<div class="col-6 col-12-medium">
 											<section class="box feature">
-												<a class="image featured">
-													<img src="images/arquitecto1.jpg" alt="Computadora para Arquitecto">
-												</a>
+												<a class="image featured"><img src="images/arquitecto1.jpg" alt="Computadora para Arquitecto"></a>
 												<h3>Computadora para Arquitecto</h3>
-												<p>Enfocada en productividad profesional y estabilidad para AutoCAD, Revit y renderizados prolongados.</p>
+												<p>Enfocada en productividad profesional y estabilidad para AutoCAD, Revit y renderizados.</p>
 											</section>
 										</div>
 									</div>
@@ -222,10 +220,9 @@
 									<h2>Aspectos a tomar en cuenta</h2>
 									<ul class="style1">
 										<li><strong>Procesador (CPU):</strong> Gamer: alta frecuencia; Arquitecto: potencia para render.</li>
-										<li><strong>Tarjeta Gráfica (GPU):</strong> Elegir según uso y presupuesto.</li>
+										<li><strong>GPU:</strong> elegir según uso y presupuesto.</li>
 										<li><strong>RAM:</strong> 16–32 GB recomendado.</li>
 										<li><strong>Almacenamiento:</strong> SSD obligatorio.</li>
-										<li><strong>Sistema de enfriamiento:</strong> Fundamental para sesiones largas.</li>
 									</ul>
 								</section>
 							</article>
@@ -233,12 +230,13 @@
 					</div>
 				</div>
 
-				<!-- Right Sidebar content (antes right-sidebar.html) -->
-				<div id="right-sidebar" class="subpage" data-body-class="no-sidebar">
+				<!-- Right Sidebar (antes right-sidebar.html) -->
+				<div id="right-sidebar" class="subpage" data-body-class="no-sidebar" role="region" aria-labelledby="right-title">
+					<a class="back-home" href="#home">← Volver al inicio</a>
+					<h2 id="right-title">Guía para armar tu propia PC</h2>
 					<div class="container">
 						<article id="content">
 							<section>
-								<h2>Guía para armar tu propia PC</h2>
 								<p>Armar tu propia computadora es una excelente forma de obtener el mejor rendimiento según tu presupuesto.</p>
 
 								<figure class="image featured">
@@ -248,7 +246,7 @@
 							</section>
 
 							<section>
-								<h3>¿Por qué es importante la compatibilidad?</h3>
+								<h3>Compatibilidad</h3>
 								<p>Todos los componentes deben ser compatibles entre sí: socket, RAM, fuente, etc.</p>
 							</section>
 
@@ -264,13 +262,10 @@
 			</div>
 		</div>
 
-		<!-- Footer (único) -->
+		<!-- Footer -->
 		<div id="footer-wrapper">
 			<footer id="footer" class="container">
 				<div class="row">
-					<div class="col-3 col-6-medium col-12-small"></div>
-
-					<!-- Contact -->
 					<section class="widget contact last">
 						<h3>Contact Us</h3>
 						<ul>
@@ -307,64 +302,67 @@
 	<script src="assets/js/main.js"></script>
 
 	<script>
-		// Script para mostrar/ocultar subpáginas y mantener clase de body (para layouts)
-		(function() {
-			const subpages = document.querySelectorAll('.subpage');
-			const defaultBodyClass = 'homepage';
+		// Gestión de subpáginas vía hash: muestra sólo la sección indicada y oculta la home.
+		(function () {
+			const subpages = Array.from(document.querySelectorAll('.subpage'));
+			const navItems = Array.from(document.querySelectorAll('#nav ul li'));
+			const navLinks = Array.from(document.querySelectorAll('#nav a'));
+			const defaultId = 'home';
 
-			function showSubpage(id) {
-				let found = false;
-				subpages.forEach(sp => {
-					if (sp.id === id) {
-						sp.classList.add('active');
-						found = true;
-						const bodyClass = sp.dataset.bodyClass || defaultBodyClass;
-						document.body.className = document.body.className.split(' ').filter(Boolean).concat([bodyClass]).join(' ');
-					} else {
-						sp.classList.remove('active');
-					}
-				});
-				// Si no existe la subpage pedida, muestra home
-				if (!found) {
-					document.querySelectorAll('.subpage').forEach(sp => sp.classList.remove('active'));
-					const home = document.getElementById('home');
-					if (home) home.classList.add('active');
-					document.body.className = document.body.className.split(' ').filter(Boolean).concat([defaultBodyClass]).join(' ');
-				}
-			}
-
-			// On load: decide por hash
-			function handleHash() {
-				const hash = location.hash.replace('#','');
-				if (!hash) {
-					showSubpage('home');
+			function setActive(id) {
+				let target = document.getElementById(id);
+				// ocultar todas
+				subpages.forEach(sp => sp.classList.remove('active'));
+				// si existe la sección, mostrarla; si no, mostrar home
+				if (target) {
+					target.classList.add('active');
 				} else {
-					showSubpage(hash);
+					document.getElementById(defaultId).classList.add('active');
 				}
-				// actualizar clase "current" del nav
-				document.querySelectorAll('#nav ul li').forEach(li => li.classList.remove('current'));
-				const navLinks = document.querySelectorAll('#nav a');
+				// actualizar clase current en el nav
+				navItems.forEach(li => li.classList.remove('current'));
 				navLinks.forEach(a => {
-					if ((a.getAttribute('href') || '').replace('#','') === (location.hash.replace('#','') || 'home')) {
+					const href = (a.getAttribute('href') || '').replace('#','') || defaultId;
+					if (href === (id || defaultId)) {
 						if (a.parentElement) a.parentElement.classList.add('current');
 					}
 				});
+				// ajustar clase del body para que los estilos de layout funcionen
+				const active = document.querySelector('.subpage.active');
+				const bodyClass = active ? (active.dataset.bodyClass || 'homepage') : 'homepage';
+				// conserva otras clases (como is-preload) y reemplaza el layout-class (última clase)
+				const classes = document.body.className.split(' ').filter(Boolean);
+				// Elimina clases de layout comunes usados por esta plantilla (homepage, left-sidebar, no-sidebar)
+				const filtered = classes.filter(c => !['homepage','left-sidebar','no-sidebar'].includes(c));
+				filtered.push(bodyClass);
+				document.body.className = filtered.join(' ');
 			}
 
-			window.addEventListener('hashchange', handleHash);
-			window.addEventListener('load', handleHash);
-
-			// Si un enlace interno se hace click, cambiar hash sin recargar
-			document.querySelectorAll('#nav a, .image.featured a').forEach(a => {
-				const href = a.getAttribute('href') || '';
-				if (href.startsWith('#')) {
-					a.addEventListener('click', function(e) {
-						// allow default behavior (update hash & browser history)
-						setTimeout(() => {
-							handleHash();
-						}, 10);
-					});
+			function onHashChange() {
+				const id = location.hash.replace('#','');
+				if (!id) {
+					setActive(defaultId);
+				} else {
+					setActive(id);
 				}
+				// opcional: scroll al top de la sección
+				window.scrollTo({ top: 0, behavior: 'smooth' });
+			}
+
+			// Inicializar al cargar la página
+			window.addEventListener('load', onHashChange);
+			window.addEventListener('hashchange', onHashChange);
+
+			// Enlaces que llevan a secciones por hash: prevenir que el navegador intente recargar la página
+			document.querySelectorAll('a[href^="#"]').forEach(a => {
+				a.addEventListener('click', function (e) {
+					// Dejar que el hash cambie: el listener hashchange hará el resto
+					// Pero evitamos enlaces que puedan tener href="#" solos (no los procesamos)
+					const href = a.getAttribute('href');
+					if (href === '#') {
+						e.preventDefault();
+					}
+				});
 			});
 		})();
 	</script>
